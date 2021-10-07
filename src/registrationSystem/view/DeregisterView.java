@@ -163,8 +163,6 @@ public class DeregisterView extends JFrame {
         courseNameInput.removeAllItems();
         ;
 
-        // courseNameInput.setModel(new DefaultComboBoxModel<>(new String[] { "No
-        // courses" }));
         for (String c : courseList) {
             courseNameInput.addItem(c);
         }
