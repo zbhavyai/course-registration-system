@@ -31,23 +31,25 @@ The deliverables for this assignment include:
 
 ## Structuring
 
-Launch the program by using `run.cmd` or `run.sh` based on your machine
++ Launch the program by using `run.cmd` or `run.sh` based on your machine
 
-Source code present in the directory [src](src)
++ Source code present in the directory [src](src)
 
-Resource files present in the directory [lib](lib)
++ Resource files present in the directory [lib](lib)
 
-GUI screenshots present in the directory [screenshots](screenshots)
++ GUI screenshots present in the directory [screenshots](screenshots)
 
-UML diagrams and their source code present in the directory [uml](uml)
++ UML diagrams and their source code present in the directory [uml](uml)
 
 
 ## UML Diagrams
 
 1. UML diagram - high level
+   
    ![Package CRS](uml/package_crs.png)
 
 2. UML diagram - detailed
+   
    ![CLass CRS](uml/class_crs.png)
 
 
