@@ -29,9 +29,7 @@ public class AppView extends JFrame {
         quitButton = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new Dimension(800, 600));
-        setMinimumSize(new Dimension(800, 600));
-        setPreferredSize(new Dimension(800, 600));
+        setMinimumSize(new Dimension(800, 500));
 
         infoPanel.setBorder(BorderFactory.createTitledBorder("Login"));
         infoPanel.setMaximumSize(new Dimension(400, 200));
