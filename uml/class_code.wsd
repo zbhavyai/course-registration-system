@@ -1,0 +1,86 @@
+@startuml class_crs
+
+allow_mixing
+
+package registrationSystem.model #DDDDDD
+{
+    class AppModel
+    class CourseCatalogModel
+    class CourseModel
+    class OfferingModel
+    class RegistrationModel
+    class StudentModel
+
+    AppModel o-- CourseCatalogModel
+    AppModel *-- StudentModel
+    CourseCatalogModel *-- CourseModel
+    CourseCatalogModel *-- OfferingModel
+    CourseModel -- OfferingModel
+    OfferingModel -- RegistrationModel
+    RegistrationModel o-- StudentModel
+    RegistrationModel o-- OfferingModel
+    StudentModel *-- RegistrationModel
+}
+
+package registrationSystem.view #DDDDDD
+{
+    class AppView
+    class MenuView
+    class SearchView
+    class RegisterView
+    class DeregisterView
+    class CourseView
+}
+
+package registrationSystem.controller #DDDDDD
+{
+    class AppController
+    class MenuController
+    class SearchController
+    class RegisterController
+    class DeregisterController
+    class CourseController
+
+    AppController *-- AppView
+    AppController *-- CourseCatalogModel
+    AppController *-- StudentModel
+    AppController *-- MenuController
+
+    MenuController *-- MenuView
+    MenuController o-- CourseCatalogModel
+    MenuController o-- StudentModel
+    MenuController *-- SearchController
+    MenuController *-- RegisterController
+    MenuController *-- DeregisterController
+    MenuController *-- CourseController
+
+    SearchController *-- SearchView
+    SearchController o-- MenuController
+    SearchController o-- CourseCatalogModel
+    SearchController o-- StudentModel
+
+    RegisterController *-- RegisterView
+    RegisterController o-- MenuController
+    RegisterController o-- CourseCatalogModel
+    RegisterController o-- StudentModel
+
+    DeregisterController *-- DeregisterView
+    DeregisterController o-- MenuController
+    DeregisterController o-- CourseCatalogModel
+    DeregisterController o-- StudentModel
+
+    CourseController *-- CourseView
+    CourseController o-- MenuController
+    CourseController o-- CourseCatalogModel
+    CourseController o-- StudentModel
+}
+
+database CourseCatalogDB
+database CourseOfferingsDB
+database DummyStudentsDB
+
+AppModel ..> DummyStudentsDB
+CourseCatalogModel ..> CourseOfferingsDB
+CourseCatalogModel ..> CourseCatalogDB
+
+@enduml

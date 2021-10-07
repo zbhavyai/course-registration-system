@@ -1,0 +1,18 @@
+@startuml package_crs
+
+package registrationSystem.model #DDDDDD
+package registrationSystem.view #DDDDDD
+package registrationSystem.controller #DDDDDD
+
+registrationSystem.controller ..> registrationSystem.model
+registrationSystem.controller ..> registrationSystem.view
+
+database CourseCatalogDB
+database CourseOfferingsDB
+database DummyStudentsDB
+
+registrationSystem.model ..> CourseCatalogDB
+registrationSystem.model ..> CourseOfferingsDB
+registrationSystem.model ..> DummyStudentsDB
+
+@enduml
