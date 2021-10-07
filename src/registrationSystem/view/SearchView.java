@@ -17,6 +17,7 @@ public class SearchView extends JFrame {
 
     private SearchView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     public static SearchView getInstance() {

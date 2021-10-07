@@ -19,6 +19,7 @@ public class MenuView extends JFrame {
 
     private MenuView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     public static MenuView getInstance() {

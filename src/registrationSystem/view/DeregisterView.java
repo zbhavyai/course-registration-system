@@ -17,6 +17,7 @@ public class DeregisterView extends JFrame {
 
     private DeregisterView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     public static DeregisterView getInstance() {

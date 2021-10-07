@@ -16,6 +16,7 @@ public class AppView extends JFrame {
 
     public AppView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     private void initComponents() {

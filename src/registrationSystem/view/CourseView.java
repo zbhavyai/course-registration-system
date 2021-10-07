@@ -15,6 +15,7 @@ public class CourseView extends JFrame {
 
     private CourseView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     public static CourseView getInstance() {

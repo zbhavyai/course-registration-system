@@ -21,6 +21,7 @@ public class RegisterView extends JFrame {
 
     private RegisterView() {
         initComponents();
+        setTitle("Course Registration System");
     }
 
     public static RegisterView getInstance() {
