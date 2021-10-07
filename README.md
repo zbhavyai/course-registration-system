@@ -7,6 +7,7 @@ ENSF 607 - Fall 2021
 ## Due Dates
 
 Submission before 11:59 PM on Friday, October 8
+
 Demonstration on Friday, October 8
 
 
