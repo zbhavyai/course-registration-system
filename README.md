@@ -29,7 +29,7 @@ The deliverables for this assignment include:
 - Students must submit their lab to the Git repository by **11:59 on Monday October 8th**
 
 
-## Structuring
+## Program Structure
 
 + Launch the program by using `run.cmd` or `run.sh` based on your machine
 
