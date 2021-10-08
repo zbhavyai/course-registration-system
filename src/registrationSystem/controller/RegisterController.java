@@ -7,32 +7,22 @@ import java.awt.event.ActionListener;
 
 public class RegisterController {
     private RegisterView registerView;
-    private MenuView menuView;
     private CourseCatalogModel cat;
     private StudentModel stu;
 
-    public RegisterController(MenuView menuView, CourseCatalogModel cat, StudentModel stu) {
+    public RegisterController(CourseCatalogModel cat, StudentModel stu) {
         this.setCat(cat);
         this.setStu(stu);
-        this.setMenuView(menuView);
 
-        this.menuView.setVisible(false);
+        MenuController.disableMenuView();
         this.setRegisterView(RegisterView.getInstance());
         this.registerView.setResults("");
         this.setActions();
         this.getRegisterView().setVisible(true);
     }
 
-    public CourseCatalogModel getCat() {
-        return cat;
-    }
-
     public void setCat(CourseCatalogModel cat) {
         this.cat = cat;
-    }
-
-    public StudentModel getStu() {
-        return stu;
     }
 
     public void setStu(StudentModel stu) {
@@ -47,17 +37,7 @@ public class RegisterController {
         this.registerView = registerView;
     }
 
-    public MenuView getMenuView() {
-        return menuView;
-    }
-
-    public void setMenuView(MenuView menuView) {
-        this.menuView = menuView;
-    }
-
     public void setActions() {
-
-
         this.registerView.actionOnRegisterButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,7 +53,7 @@ public class RegisterController {
         this.registerView.actionOnBackButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                menuView.setVisible(true);
+                MenuController.enableMenuView();
                 registerView.setVisible(false);
             }
         });

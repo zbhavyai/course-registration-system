@@ -7,18 +7,16 @@ import java.awt.event.ActionListener;
 
 public class CourseController {
     private CourseView courseView;
-    private MenuView menuView;
     private CourseCatalogModel cat;
     private StudentModel stu;
     private String type;
 
-    public CourseController(MenuView menuView, CourseCatalogModel cat, StudentModel stu, String type) {
+    public CourseController(CourseCatalogModel cat, StudentModel stu, String type) {
         this.setCat(cat);
         this.setStu(stu);
-        this.setMenuView(menuView);
         this.type = type;
 
-        this.menuView.setVisible(false);
+        MenuController.disableMenuView();
         this.setCourseView(CourseView.getInstance());
         this.courseView.setResults("");
         this.setActions();
@@ -49,14 +47,6 @@ public class CourseController {
         this.courseView = courseView;
     }
 
-    public MenuView getMenuView() {
-        return menuView;
-    }
-
-    public void setMenuView(MenuView menuView) {
-        this.menuView = menuView;
-    }
-
     public void setActions() {
         this.courseView.actionOnViewButton(new ActionListener() {
             @Override
@@ -83,7 +73,7 @@ public class CourseController {
         this.courseView.actionOnBackButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                menuView.setVisible(true);
+                MenuController.enableMenuView();
                 courseView.removeActionFromViewButton();
                 courseView.setVisible(false);
             }

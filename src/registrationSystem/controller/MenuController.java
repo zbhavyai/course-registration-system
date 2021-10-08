@@ -8,23 +8,15 @@ import java.awt.event.ActionListener;
 public class MenuController {
     private CourseCatalogModel cat;
     private StudentModel stu;
-    private MenuView menuView;
+    private static MenuView menuView;
 
     public MenuController(CourseCatalogModel cat, StudentModel stu) {
         this.setCat(cat);
         this.setStu(stu);
 
-        this.setMenuView(MenuView.getInstance());
+        menuView = MenuView.getInstance();
         this.setActions();
-        this.getMenuView().setVisible(true);
-    }
-
-    public MenuView getMenuView() {
-        return menuView;
-    }
-
-    public void setMenuView(MenuView menuView) {
-        this.menuView = menuView;
+        enableMenuView();
     }
 
     public CourseCatalogModel getCat() {
@@ -43,38 +35,46 @@ public class MenuController {
         this.stu = stu;
     }
 
+    public static void disableMenuView() {
+        menuView.setVisible(false);
+    }
+
+    public static void enableMenuView() {
+        menuView.setVisible(true);
+    }
+
     public void setActions() {
-        this.menuView.actionOnEnterButton(new ActionListener() {
+        menuView.actionOnEnterButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String menuOption = menuView.getMenuOption();
 
                 switch (menuOption) {
                     case "search": {
-                        new SearchController(menuView, cat);
+                        new SearchController(cat);
                     }
                         break;
                     case "register": {
-                        new RegisterController(menuView, cat, stu);
+                        new RegisterController(cat, stu);
                     }
                         break;
                     case "deregister": {
-                        new DeregisterController(menuView, cat, stu);
+                        new DeregisterController(cat, stu);
                     }
                         break;
                     case "view catalog": {
-                        new CourseController(menuView, cat, stu, "all");
+                        new CourseController(cat, stu, "all");
                     }
                         break;
                     case "view registered": {
-                        new CourseController(menuView, cat, stu, "registered");
+                        new CourseController(cat, stu, "registered");
                     }
                         break;
                 }
             }
         });
 
-        this.menuView.actionOnQuitButton(new ActionListener() {
+        menuView.actionOnQuitButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);

@@ -7,21 +7,15 @@ import java.awt.event.ActionListener;
 
 public class SearchController {
     private SearchView searchView;
-    private MenuView menuView;
     private CourseCatalogModel cat;
 
-    public SearchController(MenuView menuView, CourseCatalogModel cat) {
+    public SearchController(CourseCatalogModel cat) {
         this.setCat(cat);
-        this.setMenuView(menuView);
+        MenuController.disableMenuView();
 
-        this.menuView.setVisible(false);
         this.setSearchView(SearchView.getInstance());
         this.setActions();
         this.getSearchView().setVisible(true);
-    }
-
-    public CourseCatalogModel getCat() {
-        return cat;
     }
 
     public void setCat(CourseCatalogModel cat) {
@@ -34,14 +28,6 @@ public class SearchController {
 
     public void setSearchView(SearchView searchView) {
         this.searchView = searchView;
-    }
-
-    public MenuView getMenuView() {
-        return menuView;
-    }
-
-    public void setMenuView(MenuView menuView) {
-        this.menuView = menuView;
     }
 
     public void setActions() {
@@ -64,7 +50,7 @@ public class SearchController {
         this.searchView.actionOnBackButton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                menuView.setVisible(true);
+                MenuController.enableMenuView();
                 searchView.setVisible(false);
             }
         });
