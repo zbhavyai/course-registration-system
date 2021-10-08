@@ -46,7 +46,7 @@ package registrationSystem.controller #DDDDDD
     AppController *-- StudentModel
     AppController *-- MenuController
 
-    MenuController *-- MenuView
+    MenuController o-- MenuView
     MenuController o-- CourseCatalogModel
     MenuController o-- StudentModel
     MenuController *-- SearchController
@@ -54,23 +54,18 @@ package registrationSystem.controller #DDDDDD
     MenuController *-- DeregisterController
     MenuController *-- CourseController
 
-    SearchController *-- SearchView
-    SearchController o-- MenuController
+    SearchController o-- SearchView
     SearchController o-- CourseCatalogModel
-    SearchController o-- StudentModel
 
-    RegisterController *-- RegisterView
-    RegisterController o-- MenuController
+    RegisterController o-- RegisterView
     RegisterController o-- CourseCatalogModel
     RegisterController o-- StudentModel
 
-    DeregisterController *-- DeregisterView
-    DeregisterController o-- MenuController
+    DeregisterController o-- DeregisterView
     DeregisterController o-- CourseCatalogModel
     DeregisterController o-- StudentModel
 
-    CourseController *-- CourseView
-    CourseController o-- MenuController
+    CourseController o-- CourseView
     CourseController o-- CourseCatalogModel
     CourseController o-- StudentModel
 }
