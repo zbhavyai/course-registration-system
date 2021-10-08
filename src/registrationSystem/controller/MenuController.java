@@ -51,7 +51,7 @@ public class MenuController {
 
                 switch (menuOption) {
                     case "search": {
-                        new SearchController(menuView, cat, stu);
+                        new SearchController(menuView, cat);
                     }
                         break;
                     case "register": {

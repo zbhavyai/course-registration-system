@@ -9,11 +9,9 @@ public class SearchController {
     private SearchView searchView;
     private MenuView menuView;
     private CourseCatalogModel cat;
-    private StudentModel stu;
 
-    public SearchController(MenuView menuView, CourseCatalogModel cat, StudentModel stu) {
+    public SearchController(MenuView menuView, CourseCatalogModel cat) {
         this.setCat(cat);
-        this.setStu(stu);
         this.setMenuView(menuView);
 
         this.menuView.setVisible(false);
@@ -28,14 +26,6 @@ public class SearchController {
 
     public void setCat(CourseCatalogModel cat) {
         this.cat = cat;
-    }
-
-    public StudentModel getStu() {
-        return stu;
-    }
-
-    public void setStu(StudentModel stu) {
-        this.stu = stu;
     }
 
     public SearchView getSearchView() {
