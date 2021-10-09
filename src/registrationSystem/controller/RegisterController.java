@@ -1,32 +1,18 @@
 package registrationSystem.controller;
 
 import registrationSystem.view.*;
-import registrationSystem.model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RegisterController {
     private RegisterView registerView;
-    private CourseCatalogModel cat;
-    private StudentModel stu;
 
-    public RegisterController(CourseCatalogModel cat, StudentModel stu) {
-        this.setCat(cat);
-        this.setStu(stu);
-
+    public RegisterController() {
         MenuController.disableMenuView();
         this.setRegisterView(RegisterView.getInstance());
         this.registerView.setResults("");
         this.setActions();
         this.getRegisterView().setVisible(true);
-    }
-
-    public void setCat(CourseCatalogModel cat) {
-        this.cat = cat;
-    }
-
-    public void setStu(StudentModel stu) {
-        this.stu = stu;
     }
 
     public RegisterView getRegisterView() {
@@ -45,7 +31,8 @@ public class RegisterController {
                 String courseNumber = String.valueOf(registerView.getCourseNumber());
                 int courseOffering = registerView.getCourseOffering();
 
-                String output = stu.registerForCourse(cat, courseName, courseNumber, courseOffering);
+                String output = AppController.getStudent().registerForCourse(AppController.getCatalog(), courseName,
+                        courseNumber, courseOffering);
                 registerView.setResults(output);
             }
         });

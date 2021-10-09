@@ -1,33 +1,19 @@
 package registrationSystem.controller;
 
 import registrationSystem.view.*;
-import registrationSystem.model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DeregisterController {
     private DeregisterView deregisterView;
-    private CourseCatalogModel cat;
-    private StudentModel stu;
 
-    public DeregisterController(CourseCatalogModel cat, StudentModel stu) {
-        this.setCat(cat);
-        this.setStu(stu);
-
+    public DeregisterController() {
         MenuController.disableMenuView();
         this.setDeregisterView(DeregisterView.getInstance());
         this.deregisterView.setOutput("");
         this.updateRegisteredCourseList();
         this.setActions();
         this.getDeregisterView().setVisible(true);
-    }
-
-    public void setCat(CourseCatalogModel cat) {
-        this.cat = cat;
-    }
-
-    public void setStu(StudentModel stu) {
-        this.stu = stu;
     }
 
     public DeregisterView getDeregisterView() {
@@ -51,7 +37,8 @@ public class DeregisterController {
                 else {
                     String[] courseNameNumber = courseNameNumberCombo.split("-");
 
-                    String output = stu.deRegisterFromCourse(cat, courseNameNumber[0], courseNameNumber[1]);
+                    String output = AppController.getStudent().deRegisterFromCourse(AppController.getCatalog(),
+                            courseNameNumber[0], courseNameNumber[1]);
                     deregisterView.setOutput(output);
                     updateRegisteredCourseList();
                 }
@@ -68,7 +55,7 @@ public class DeregisterController {
     }
 
     public void updateRegisteredCourseList() {
-        String[] list = this.stu.getRegisteredCourseList();
+        String[] list = AppController.getStudent().getRegisteredCourseList();
 
         if (list == null) {
             list = new String[1];

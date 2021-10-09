@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 
 public class AppController {
     private AppView appView;
-    private CourseCatalogModel cat;
-    private StudentModel stu;
+    private static CourseCatalogModel cat;
+    private static StudentModel stu;
 
     public AppController() {
         this.setAppView(new AppView());
@@ -24,6 +24,14 @@ public class AppController {
         this.appView = appView;
     }
 
+    public static CourseCatalogModel getCatalog() {
+        return cat;
+    }
+
+    public static StudentModel getStudent() {
+        return stu;
+    }
+
     public void setActions() {
         this.appView.actionOnEnterButton(new ActionListener() {
             @Override
@@ -37,7 +45,7 @@ public class AppController {
                 AppModel.getInstance(cat);
 
                 appView.setVisible(false);
-                new MenuController(cat, stu);
+                new MenuController();
             }
         });
 

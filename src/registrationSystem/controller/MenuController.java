@@ -1,38 +1,16 @@
 package registrationSystem.controller;
 
 import registrationSystem.view.*;
-import registrationSystem.model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MenuController {
-    private CourseCatalogModel cat;
-    private StudentModel stu;
     private static MenuView menuView;
 
-    public MenuController(CourseCatalogModel cat, StudentModel stu) {
-        this.setCat(cat);
-        this.setStu(stu);
-
+    public MenuController() {
         menuView = MenuView.getInstance();
         this.setActions();
         enableMenuView();
-    }
-
-    public CourseCatalogModel getCat() {
-        return cat;
-    }
-
-    public void setCat(CourseCatalogModel cat) {
-        this.cat = cat;
-    }
-
-    public StudentModel getStu() {
-        return stu;
-    }
-
-    public void setStu(StudentModel stu) {
-        this.stu = stu;
     }
 
     public static void disableMenuView() {
@@ -51,23 +29,23 @@ public class MenuController {
 
                 switch (menuOption) {
                     case "search": {
-                        new SearchController(cat);
+                        new SearchController();
                     }
                         break;
                     case "register": {
-                        new RegisterController(cat, stu);
+                        new RegisterController();
                     }
                         break;
                     case "deregister": {
-                        new DeregisterController(cat, stu);
+                        new DeregisterController();
                     }
                         break;
                     case "view catalog": {
-                        new CourseController(cat, stu, "all");
+                        new CourseController("all");
                     }
                         break;
                     case "view registered": {
-                        new CourseController(cat, stu, "registered");
+                        new CourseController("registered");
                     }
                         break;
                 }
