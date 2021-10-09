@@ -51,9 +51,3 @@ The deliverables for this assignment include:
 2. UML diagram - detailed
    
    ![CLass CRS](uml/class_crs.png)
-
-
-## Submitted by
-
-**Name** - Bhavyai Gupta  
-**UCID** - 30143691
