@@ -13,13 +13,12 @@ package registrationSystem.model #DDDDDD
 
     AppModel o-- CourseCatalogModel
     AppModel *-- StudentModel
-    CourseCatalogModel *-- CourseModel
-    CourseCatalogModel *-- OfferingModel
-    CourseModel -- OfferingModel
-    OfferingModel -- RegistrationModel
-    RegistrationModel o-- StudentModel
-    RegistrationModel o-- OfferingModel
-    StudentModel *-- RegistrationModel
+    CourseCatalogModel o-- CourseModel
+    CourseCatalogModel -- StudentModel
+    CourseModel -- CourseModel
+    StudentModel -- RegistrationModel
+    RegistrationModel -- OfferingModel
+    CourseModel o-- OfferingModel
 }
 
 package registrationSystem.view #DDDDDD
@@ -41,33 +40,21 @@ package registrationSystem.controller #DDDDDD
     class DeregisterController
     class CourseController
 
-    AppController *-- AppView
     AppController *-- CourseCatalogModel
     AppController *-- StudentModel
     AppController *-- MenuController
 
-    MenuController o-- MenuView
-    MenuController o-- CourseCatalogModel
-    MenuController o-- StudentModel
     MenuController *-- SearchController
     MenuController *-- RegisterController
     MenuController *-- DeregisterController
     MenuController *-- CourseController
 
+    AppController *-- AppView
+    MenuController o-- MenuView
     SearchController o-- SearchView
-    SearchController o-- CourseCatalogModel
-
     RegisterController o-- RegisterView
-    RegisterController o-- CourseCatalogModel
-    RegisterController o-- StudentModel
-
     DeregisterController o-- DeregisterView
-    DeregisterController o-- CourseCatalogModel
-    DeregisterController o-- StudentModel
-
     CourseController o-- CourseView
-    CourseController o-- CourseCatalogModel
-    CourseController o-- StudentModel
 }
 
 database CourseCatalogDB
