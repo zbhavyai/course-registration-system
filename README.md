@@ -29,6 +29,21 @@ A swing GUI based course registration system
 + [uml](uml) - contains UML code and the generated UML diagrams
 
 
+## Dependencies
+
++ JDK version 11.0.11 or above
+
+
+## How to run
+
+1. Clone the repository on your machine
+
+2. If you are using Windows OS, simply double on the [`run.cmd`](run.cmd) file. If you are using unix based OS, run the below command in the project directory
+   ```bash
+   $ ./run.sh
+   ```
+
+
 ## UML Diagrams
 
 1. UML diagram - high level
@@ -54,18 +69,3 @@ See all screenshots [here](screenshots)
 + De-registration
 
    ![Deregistration](screenshots/3.2-Successful-De-Registration.png)
-
-
-## Dependencies
-
-+ JDK version 11.0.11 or above
-
-
-## How to run
-
-1. Clone the repository on your machine
-
-2. If you are using Windows OS, simply double on the [`run.cmd`](run.cmd) file. If you are using unix based OS, run the below command in the project directory
-   ```bash
-   $ ./run.sh
-   ```
