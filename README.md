@@ -60,6 +60,7 @@ A swing GUI based course registration system
 See all screenshots [here](screenshots)
 
 + Menu options
+   
    ![Menu Options](screenshots/0.2-Menu-Options.png)
 
 + Registration
