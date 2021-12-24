@@ -1,44 +1,32 @@
-# Lab Assignment 3
+# Course Registration System
 
-ENSF 607 - Fall 2021
-
-
-## Due Dates
-
-Submission before 11:59 PM on Friday, October 8
-
-Demonstration on Friday, October 8
+A swing GUI based course registration system
 
 
-## Objectives
+## Features
 
-In Lab Assignment 1 you were tasked by creating a student registration system based on the UML diagram given to you in the lecture material. In this assignment, you will modify the design of your application to MVC. Your final submission should have the same functionality of the application you developed in lab 1. However, for this assignment you must have a GUI instead of a console-based application.
++ Search the course catalog
 
-The deliverables for this assignment include:
++ Register for course only if pre-requisites are met
 
-- Modified UML diagram(s) to show case your design. You may choose to have more than one UML diagram to show a meaningful high-level and low-level view of the system. UML package diagram and class diagram are appropriate to use.
++ Maximum registration of upto six courses
 
-- Your Java application which must be delivered in 3 packages:
-   - Model
-   - View
-   - Controller
++ De-register from a course
 
-- Students will demo their project to their TA **during the lab on Friday October 8th**
-
-- Students must submit their lab to the Git repository by **11:59 on Monday October 8th**
++ List registered courses
 
 
 ## Program Structure
 
-+ Launch the program by using `run.cmd` or `run.sh` based on your machine
+![Directory Tree](screenshots/dir_tree.png)
 
-+ Source code present in the directory [src](src)
++ [lib](lib) - contains resource files
 
-+ Resource files present in the directory [lib](lib)
++ [screenshots](screenshots) - contains GUI screenshots
 
-+ GUI screenshots present in the directory [screenshots](screenshots)
++ [src](src) - contains source code
 
-+ UML diagrams and their source code present in the directory [uml](uml)
++ [uml](uml) - contains UML code and the generated UML diagrams
 
 
 ## UML Diagrams
@@ -50,3 +38,34 @@ The deliverables for this assignment include:
 2. UML diagram - detailed
    
    ![CLass CRS](uml/class_crs.png)
+
+
+## Screenshots
+
+See all screenshots [here](screenshots)
+
++ Menu options
+   ![Menu Options](screenshots/0.2-Menu-Options.png)
+
++ Registration
+
+   ![Registration](screenshots/2.3-Successful-Registration.png)
+
++ De-registration
+
+   ![Deregistration](screenshots/3.2-Successful-De-Registration.png)
+
+
+## Dependencies
+
++ JDK version 11.0.11 or above
+
+
+## How to run
+
+1. Clone the repository on your machine
+
+2. If you are using Windows OS, simply double on the [`run.cmd`](run.cmd) file. If you are using unix based OS, run the below command in the project directory
+   ```bash
+   $ ./run.sh
+   ```
